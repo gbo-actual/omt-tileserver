@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+   host:
+     image: klokantech/tileserver-gl
+     volumes:
+       - ./tiles:/data
+     expose:
+       - "80"
+       - "443"
+     environment:
+       VIRTUAL_HOST: tiles.yourcoolexample.com
+       LETSENCRYPT_HOST: tiles.yourcoolexample.com
+       LETSENCRYPT_EMAIL: yourcoolemail@somehost.com
+
+volumes:
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
