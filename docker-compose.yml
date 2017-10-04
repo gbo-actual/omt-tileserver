@@ -13,8 +13,6 @@ services:
        LETSENCRYPT_HOST: tiles.yourcoolexample.com
        LETSENCRYPT_EMAIL: yourcoolemail@somehost.com
 
-volumes:
-
 networks:
   default:
     external:
